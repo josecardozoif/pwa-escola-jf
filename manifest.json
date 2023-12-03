@@ -1,6 +1,6 @@
 {
-    "name": "Geolocation Progressive Web App",
-    "short_name": "geoloc-pwa",
+    "name": "School Geolocation Progressive Web App",
+    "short_name": "schoolgeo-pwa",
     "icons": [
         {
             "src": "img/pwa-iicon-256.png",
@@ -25,3 +25,5 @@
     "background_color": "white",
     "theme_color": "white"
 }
+
+

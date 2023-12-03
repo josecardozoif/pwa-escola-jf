@@ -1,48 +1,48 @@
-if('serviceWorker' in navigator){
+if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
-        try{
+        try {
             let reg;
-            reg = await navigator.serviceWorker.register('/sw.js', {type: 'module'});
-            console.log('Service worker registrada! ', reg);
+            reg = await navigator.serviceWorker.register('/sw.js', { type: "module" });
+
+            console.log('Service worker registrada! 😎', reg);
         } catch (err) {
-            console.log('Registro da service worker falhou: ', err);
+            console.log('😥 Service worker registro falhou: ', err);
         }
     });
 }
 
-let posicaoInicial;
-const capturarPosicao = document.getElementById('localizacao');
+let posicaoInicial;//variavel para capturar a posicao
+const capturarLocalizacao = document.getElementById('localizacao');
 const latitude = document.getElementById('latitude');
 const longitude = document.getElementById('longitude');
+const map = document.getElementById('mapa');
 
-const sucesso = (posicao) => {
+const sucesso = (posicao) => {//callback de sucesso para captura da posicao
     posicaoInicial = posicao;
     latitude.innerHTML = posicaoInicial.coords.latitude;
     longitude.innerHTML = posicaoInicial.coords.longitude;
+    map.src = "http://maps.google.com/maps?q=" + posicaoInicial.coords.latitude + "," + posicaoInicial.coords.longitude + "&z=16&output=embed";
+};
 
-    let embedString = `http://maps.google.com/maps?q=${posicaoInicial.coords.latitude},${posicaoInicial.coords.longitude}&z=16&output=embed`
-    document.getElementsByTagName("iframe")[0].src = embedString;
-}
-
-const erro = (err) => {
+const erro = (error) => {//callback de error (falha para captura de localizacao)
     let errorMessage;
-    switch(err.code){
+    switch (error.code) {
         case 0:
-            errorMessage = "Erro desconhecido!"
-        break;
+            errorMessage = "Erro desconhecido"
+            break;
         case 1:
             errorMessage = "Permissão negada!"
-        break;
+            break;
         case 2:
             errorMessage = "Captura de posição indisponível!"
-        break;
+            break;
         case 3:
-            errorMessage = "Tempo de solicitação excedido"
-        break;
+            errorMessage = "Tempo de solicitação excedido!"
+            break;
     }
     console.log('Ocorreu um erro: ' + errorMessage);
 };
 
-capturarPosicao.addEventListener('click', () => {
+capturarLocalizacao.addEventListener('click', () => {
     navigator.geolocation.getCurrentPosition(sucesso, erro);
 });
