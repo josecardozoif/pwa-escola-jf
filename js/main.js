@@ -1,18 +1,18 @@
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
-        try {
-            let reg;
-            reg = await navigator.serviceWorker.register('/sw.js', { type: "module" });
-
-            console.log('Service worker registrada! 😎', reg);
-        } catch (err) {
-            console.log('😥 Service worker registro falhou: ', err);
-        }
-    });
-}
+      try {
+        let reg;
+        reg = await navigator.serviceWorker.register('/sw.js', { type: "module" });
+  
+        console.log('Service worker registrada!', reg);
+      } catch (err) {
+        console.log('Service worker registro falhou:', err);
+      }
+    })
+  }
 
 let posicaoInicial;//variavel para capturar a posicao
-const capturarLocalizacao = document.getElementById('localizacao');
+const capturarLocalizacao = document.getElementById('caploc');
 const latitude = document.getElementById('latitude');
 const longitude = document.getElementById('longitude');
 const map = document.getElementById('mapa');
@@ -46,3 +46,5 @@ const erro = (error) => {//callback de error (falha para captura de localizacao)
 capturarLocalizacao.addEventListener('click', () => {
     navigator.geolocation.getCurrentPosition(sucesso, erro);
 });
+
+//---------------------------------------------------------------------------------------------------//

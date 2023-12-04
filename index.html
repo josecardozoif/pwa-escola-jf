@@ -15,7 +15,7 @@
 <body>
   <section class="container">
     <header class="cabecalho">
-      <h1 class="titulo">PWA - Geolocation</h1>
+      <h1 class="tit">PWA - Geolocation</h1>
     </header>
     <div class="conteudo">
       <header class="cabecalhoConteudo">
@@ -26,10 +26,10 @@
           Latitude: <span id="latitude">0.0</span>
         </p>
         <p>
-          Logitude: <span id="longitude">0.0</span>
+          Longitude: <span id="longitude">0.0</span>
         </p>
         <div>
-          <button class="botao" id="localizacao">Capturar Localização</button>
+          <button class="botao" id="caploc">Capturar Localização</button>
         </div>
       </div>
     </div>
@@ -65,6 +65,29 @@
       Progressive Web Application - Geolocation
     </footer>
   </section>
+
+  <div class="container">
+    <h1 class="title">Escolas</h1>
+    <div style="text-align: center;">
+        <img src="/images/capibaraNotes.png" alt="pwa" width="256" height="256">
+    </div>
+    <div id="entrada">
+        <input type="text" id="titulo" placeholder="Titulo">
+        <select id="categoria" placeholder="Categoria">
+            <option>Tarefa</option>
+            <option>Receita</option>
+            <option>Evento</option>
+        </select>
+        <textarea id="descricao" cols="30" rows="10" placeholder="Descrição"></textarea>
+        <input type="date" id="data">
+        <button id="btnCadastro">Cadastrar</button>
+        <button id="btnCarregar">Carregar Minhas Anotacoes</button>
+    </div>
+
+    <div id="resultados"></div>
+    
+</div>
+  <script src="js/db.js"></script>
   <script src="js/main.js"></script>
 </body>
 
