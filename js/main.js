@@ -11,11 +11,10 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-let posicaoInicial;//variavel para capturar a posicao
-const capturarLocalizacao = document.getElementById('caploc');
+let posicaoInicial;
 const latitude = document.getElementById('latitude');
 const longitude = document.getElementById('longitude');
-const map = document.getElementById('mapa');
+const map = document.querySelector('#mapa');
 
 const sucesso = (posicao) => {//callback de sucesso para captura da posicao
     posicaoInicial = posicao;
@@ -25,17 +24,16 @@ const sucesso = (posicao) => {//callback de sucesso para captura da posicao
 };
 
 let capPosicao;
-    const caplatitude = document.getElementById('caplat').value;
-    const caplongitude = document.getElementById('caplong').value;
+
+    const caplatitude = document.querySelector('#caplat');
+    const caplongitude = document.querySelector('#caplong');
 
 const localizacao = async () => {
-
-    capPosicao = posicao2;
-    caplatitude.innerHTML = capPosicao.coords.caplatitude;
-    caplongitude.innerHTML = capPosicao.coords.caplongitude;
-
-    map.src = "http://maps.google.com/maps?q=" + capPosicao.coords.caplatitude + "," + capPosicao.coords.caplongitude + "&z=16&output=embed";
-    console.log("FOI")
+    const lat = caplatitude.value
+    const long = caplongitude.value
+    
+    map.src = "http://maps.google.com/maps?q=" + parseFloat(lat) + "," +parseFloat(long) + "&z=16&output=embed";
+    console.log("2")
   }
 
   const erro = (error) => {//callback de error (falha para captura de localizacao)
@@ -57,17 +55,9 @@ const localizacao = async () => {
     console.log('Ocorreu um erro: ' + errorMessage);
 };
 
-const botao = document.querySelector ('btnCapturar')
+const botao = document.querySelector('#btnCapturar')
 botao.addEventListener('click', () => {
-  console.log("LOCAL")
+  console.log("1")
   localizacao();
-  console.log("BOTAO")
+  console.log("3")
 });
-
-
-
-capturarLocalizacao.addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition(sucesso, erro);
-});
-
-//---------------------------------------------------------------------------------------------------//
