@@ -1,15 +1,15 @@
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', async () => {
-      try {
-        let reg;
-        reg = await navigator.serviceWorker.register('/sw.js', { type: "module" });
-  
-        console.log('Service worker registrada!', reg);
-      } catch (err) {
-        console.log('Service worker registro falhou:', err);
-      }
-    })
-  }
+  window.addEventListener('load', async () => {
+    try {
+      let reg;
+      reg = await navigator.serviceWorker.register('/sw.js', { type: "module" });
+
+      console.log('Service worker registrada! 😎', reg);
+    } catch (err) {
+      console.log('😥 Service worker registro falhou: ', err);
+    }
+  });
+}
 
 let posicaoInicial;//variavel para capturar a posicao
 const capturarLocalizacao = document.getElementById('caploc');
@@ -24,7 +24,21 @@ const sucesso = (posicao) => {//callback de sucesso para captura da posicao
     map.src = "http://maps.google.com/maps?q=" + posicaoInicial.coords.latitude + "," + posicaoInicial.coords.longitude + "&z=16&output=embed";
 };
 
-const erro = (error) => {//callback de error (falha para captura de localizacao)
+let capPosicao;
+    const caplatitude = document.getElementById('caplat').value;
+    const caplongitude = document.getElementById('caplong').value;
+
+const localizacao = async () => {
+
+    capPosicao = posicao2;
+    caplatitude.innerHTML = capPosicao.coords.caplatitude;
+    caplongitude.innerHTML = capPosicao.coords.caplongitude;
+
+    map.src = "http://maps.google.com/maps?q=" + capPosicao.coords.caplatitude + "," + capPosicao.coords.caplongitude + "&z=16&output=embed";
+    console.log("FOI")
+  }
+
+  const erro = (error) => {//callback de error (falha para captura de localizacao)
     let errorMessage;
     switch (error.code) {
         case 0:
@@ -42,6 +56,15 @@ const erro = (error) => {//callback de error (falha para captura de localizacao)
     }
     console.log('Ocorreu um erro: ' + errorMessage);
 };
+
+const botao = document.querySelector ('btnCapturar')
+botao.addEventListener('click', () => {
+  console.log("LOCAL")
+  localizacao();
+  console.log("BOTAO")
+});
+
+
 
 capturarLocalizacao.addEventListener('click', () => {
     navigator.geolocation.getCurrentPosition(sucesso, erro);

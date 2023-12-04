@@ -70,14 +70,6 @@ async function buscarTodasAnotacoes(){
         deletar.forEach((deletar, index) => {
             deletar.addEventListener('click', () => deletarAnotacao(anotacoes[index].titulo))
         });
-
-        const alterar = document.querySelectorAll(".btnAlterar") 
-        alterar.forEach(alteracao => {
-            alteracao.addEventListener('click', (event) => {
-                const titulo = event.target.getAttribute("titulo");
-                alterarAnotacao(titulo, anotacoes);
-            });
-        });
     }
 }
 

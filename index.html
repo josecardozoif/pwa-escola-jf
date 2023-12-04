@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PWA Geolocation - Capturando a Localização</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="apple-touch-icon" href="img/pwa-iicon-256.png">
-  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="img/pwa-iicon-256.png" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="favicon.ico">
   <meta name="theme-color" content="white" />
 </head>
@@ -23,16 +23,20 @@
       </header>
       <div class="conteudoLocalizacao">
         <p>
-          Latitude: <span id="latitude">0.0</span>
+          Latitude: <span id="alatitude">0.0</span>
         </p>
         <p>
-          Longitude: <span id="longitude">0.0</span>
+          Longitude: <span id="alongitude">0.0</span>
         </p>
         <div>
           <button class="botao" id="caploc">Capturar Localização</button>
         </div>
       </div>
     </div>
+
+    <input id="caplat" type="text" placeholder="Lat">
+    <input id="caplong" type="text" placeholder="Long">
+    <button id="btnCapturar">Capturar</button>
 
     <div class="mapouter">
       <div class="gmap_canvas">
@@ -66,23 +70,18 @@
     </footer>
   </section>
 
-  <div class="container">
+<!--
+    <div class="container">
     <h1 class="title">Escolas</h1>
-    <div style="text-align: center;">
-        <img src="/images/capibaraNotes.png" alt="pwa" width="256" height="256">
-    </div>
     <div id="entrada">
         <input type="text" id="titulo" placeholder="Titulo">
-        <select id="categoria" placeholder="Categoria">
-            <option>Tarefa</option>
-            <option>Receita</option>
-            <option>Evento</option>
-        </select>
-        <textarea id="descricao" cols="30" rows="10" placeholder="Descrição"></textarea>
-        <input type="date" id="data">
+        <input type="text" id="latitude" placeholder="Latitude">
+        <input type="text" id="longitude" placeholder="Longitude">
+        <button id="btnCapturar">Capturar</button>
         <button id="btnCadastro">Cadastrar</button>
-        <button id="btnCarregar">Carregar Minhas Anotacoes</button>
-    </div>
+        <button id="btnCarregar">Carregar</button>
+  </div>
+-->
 
     <div id="resultados"></div>
     
