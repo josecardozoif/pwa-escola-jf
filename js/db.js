@@ -71,8 +71,8 @@ const listar = async()=>{
     
     if(anotacoes){
         const divLista = anotacoes.map(anotacao => {
-            return `<div class="item">
-                    <p>${anotacao.capTitle};<br/>${anotacao.caplatitude};<br/>${anotacao.caplongitude}</p>
+            return `<div class="card">
+                    <p id="carditem">Titulo: ${anotacao.capTitle};<br/>Latitude: ${anotacao.caplatitude};<br/> Longitude: ${anotacao.caplongitude}</p>
                    </div>`;
         }); 
         

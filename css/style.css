@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(174, 174, 174);
+    background-color: #53ac59;
+
 }
 
 .container {
@@ -13,9 +14,17 @@ body {
 .questions{
     width: 100%;
 }
-
-#caplat{
-    margin-left: 38%;
+#quest{
+    border: 1px solid white;
+    width: 22%;
+    height: 195px;
+    border-radius: 10px;
+    margin-left: 40%;
+}
+h1{
+    margin-left: 35%;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .titulo{
@@ -30,13 +39,42 @@ body {
     box-shadow: 3px 3px 3px rgba(153, 154, 225, 0.3);
     text-align: center;
 }
+#capTitle, #caplat, #caplong{
+    margin-left: 2%;
+    height: 35px;
+    width: 270px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    border-style: none;
+    border-left: 4px solid #398d2b;
+    font-family: 'Courier New', Courier, monospace;
 
+}
+#capTitle{
+    margin-top: 10px;
+}
+
+
+#btnCapturar, #btnLista{
+    margin-top: 3px;
+    margin-left: 6%;
+    height: 30px;
+    width: 256px;
+    border-radius: 10px;
+    border-style: none;
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    color: white;
+    background-color: #3b8952;
+    font-family: 'Courier New', Courier, monospace;
+
+}
 .conteudoLocalizacao{
     font-size: 1.5em;
 }
 
 .rodape{
-    margin-top: 2%;
     text-align: center;
     border-radius: 5%;
 }
@@ -65,12 +103,47 @@ body {
 }
 
 #mapa{
-    margin-top: 5%;
     margin-bottom: 5%;
     width: 100%;
 }
 
 .gmap_canvas{
-    margin-left: 100%;
+    margin-top: 30px;
+    margin-left: 65%;
     width: 100%;
+}
+.mapouter {
+    position: relative;
+    text-align: right;
+    width: 600px;
+    height: 400px;
+  }
+
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 600px;
+    height: 400px;
+  }
+
+  .gmap_iframe {
+    width: 600px !important;
+    height: 400px !important;
+  }
+  .card{
+    margin-top: 15px;
+    border: 1px solid white;
+    width: 25%;
+    border-radius: 10px;
+    border-left: 4px solid white;
+    background-color: #3b8952;
+    margin-left: 20px;
+
+  }
+#carditem{  
+    font-size: 20px;
+    padding-left: 10px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }

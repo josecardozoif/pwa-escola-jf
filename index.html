@@ -15,63 +15,35 @@
 </head>
 
 <body>
+  
   <div class="questions">
+    <h1>Localização de Escolas</h1>
   <div id="quest">
-    <input id="capTitle" type="text" placeholder="title">
-    <input id="caplat" type="text" placeholder="Lat">
-    <input id="caplong" type="text" placeholder="Long">
-    <button id="btnCapturar">Capturar</button>
-    <button id="btnLista">LIUSTA</button>
+    <input id="capTitle" type="text" placeholder="Título:"><br/>
+    <input id="caplat" type="text" placeholder="Latitude:"><br/>
+    <input id="caplong" type="text" placeholder="Longitude:"><br/>
+    <button id="btnCapturar">Capturar</button><br/>
+    <button id="btnLista">Listar</button>
   </div>
   
   </div>
-
     <div class="mapouter">
       <div class="gmap_canvas">
         <iframe id="mapa" class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
           src="">
         </iframe>
       </div>
-      <style>
-        .mapouter {
-          position: relative;
-          text-align: right;
-          width: 600px;
-          height: 400px;
-        }
-
-        .gmap_canvas {
-          overflow: hidden;
-          background: none !important;
-          width: 600px;
-          height: 400px;
-        }
-
-        .gmap_iframe {
-          width: 600px !important;
-          height: 400px !important;
-        }
-      </style>
+    
     </div>
+
+    <div id="resultados"></div>
+
     <footer class="rodape">
       Progressive Web Application - Geolocation
     </footer>
   </section>
 
-<!--
-    <div class="container">
-    <h1 class="title">Escolas</h1>
-    <div id="entrada">
-        <input type="text" id="titulo" placeholder="Titulo">
-        <input type="text" id="latitude" placeholder="Latitude">
-        <input type="text" id="longitude" placeholder="Longitude">
-        <button id="btnCapturar">Capturar</button>
-        <button id="btnCadastro">Cadastrar</button>
-        <button id="btnCarregar">Carregar</button>
-  </div>
--->
-
-    <div id="resultados"></div>
+    
     
 </div>
  <script type="module" src="js/db.js"></script>
@@ -79,3 +51,4 @@
 </body>
 
 </html>
+
